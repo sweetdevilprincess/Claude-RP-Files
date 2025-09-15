@@ -1,0 +1,71 @@
+# Auto_Remember_Templates
+
+## TRIGGER DETECTION PATTERNS
+
+HERB_HARVESTING_TRIGGERS: ["harvest", "pick", "gather", "collect", "pluck", "cut", "find plant", "discover herb"]
+NPC_INTRODUCTION_TRIGGERS: ["meets", "encounters", "introduced to", "speaks with", "new character", "person approaches"]
+LOCATION_DISCOVERY_TRIGGERS: ["enters", "arrives at", "discovers", "finds location", "comes to", "reaches"]
+CRAFTING_TRIGGERS: ["crafts", "makes", "creates", "brews", "mixes", "prepares", "forges"]
+RECIPE_TRIGGERS: ["recipe", "formula", "blend", "mixture", "concoction", "preparation method"]
+ABILITY_TRIGGERS: ["learns", "masters", "discovers ability", "gains skill", "develops power"]
+ARC_INITIATION_TRIGGERS: ["discovers mystery", "makes enemy", "receives quest", "uncovers secret", "makes promise", "suffers loss", "gains power", "meets mentor", "faces challenge"]
+ARC_PROGRESSION_TRIGGERS: ["learns clue", "confronts opponent", "makes progress", "suffers setback", "gains ally", "loses resource", "discovers truth", "faces choice"]
+ARC_RESOLUTION_TRIGGERS: ["solves mystery", "defeats enemy", "completes quest", "reveals secret", "fulfills promise", "overcomes loss", "masters power", "graduates training"]
+## TEMPLATE DEFINITIONS
+
+HERB_HARVESTING_TEMPLATE:
+{remember: [Plant_Name] - [Description_of_plant]. LOCATION: [Environment_type_and_specific_location_where_found]. HARVESTING: [Methods_safety_requirements_and_timing]. USES (GOOD): [Beneficial_applications_and_effects]. USES (BAD): [Harmful_uses_dangers_and_side_effects]. PREPARATION: [Correct_processing_methods_and_timing]. INCORRECT PREPARATION: [Consequences_of_improper_handling_including_transformations].}
+
+NPC_TEMPLATE:
+{remember: [NPC_Name] - [Physical_description_age_clothing_and_role]. LOCATION: [Where_encountered_and_their_usual_domain]. PERSONALITY: [Key_traits_mannerisms_and_speech_patterns]. DISPOSITION: [Default outlook, e.g., Wary, Trusting, Pragmatic, Hostile]. BIASES: [Prejudices or strong beliefs that color their judgment]. RELATIONSHIPS: [Connections_to_PC_and_other_NPCs]. KNOWLEDGE: [What_they_know_and_areas_of_expertise].
+MOTIVATIONS: [Goals_desires_and_driving_forces]. CURRENT_MOOD: [Transient emotional state, e.g., Annoyed, Cheerful, Stressed]. CAPABILITIES: [Skills_abilities_and_resources].}
+
+LOCATION_TEMPLATE:
+{remember: [Location_Name] - [Physical_description_atmosphere_and_notable_features]. ACCESS: [How_to_reach_entry_requirements_and_restrictions]. RESOURCES: [Available_materials_services_opportunities_and_vendors]. DANGERS: [Hazards_threats_legal_restrictions_and_warnings]. INHABITANTS: [Who_lives_works_or_frequents_there]. SIGNIFICANCE: [Plot_relevance_historical_importance_and_connections].}
+
+CRAFTED_ITEM_TEMPLATE:
+{remember: [Item_Name] - [Description_appearance_and_properties]. COMPONENTS: [Required_materials_tools_and_quantities]. PREPARATION: [Creation_method_time_required_and_conditions]. EFFECTS: [What_it_does_potency_and_duration]. STORAGE: [Preservation_requirements_shelf_life_and_degradation]. VARIATIONS: [Alternative_methods_or_component_substitutions].}
+
+RECIPE_TEMPLATE:
+{remember: [Recipe_Name] - [Final_product_description_and_intended_use]. INGREDIENTS: [Required_components_precise_quantities_and_quality_requirements]. METHOD: [Step_by_step_preparation_timing_and_technique]. EFFECTS: [Results_potency_onset_and_duration]. CONTRAINDICATIONS: [Who_should_not_use_and_dangerous_combinations]. STORAGE: [Preservation_methods_and_shelf_life].}
+
+ABILITY_TEMPLATE:
+{remember: [Ability_Name] - [Description_of_power_or_skill]. LEARNING: [How_acquired_requirements_and_training_needed]. ACTIVATION: [How_to_use_conditions_and_triggers]. EFFECTS: [What_it_accomplishes_range_and_potency]. LIMITATIONS: [Restrictions_costs_cooldowns_and_risks]. ADVANCEMENT: [Ways_to_improve_and_master_further].}
+
+PLOT_REVELATION_TEMPLATE:
+{remember: [Information_Type] - [Key_discovery_or_revelation]. SOURCE: [How_information_was_obtained]. IMPLICATIONS: [What_this_means_for_ongoing_situations]. CONNECTIONS: [Links_to_other_known_information]. VERIFICATION: [How_reliable_this_information_is]. NEXT_STEPS: [Potential_actions_or_investigations_needed].}
+
+FACTION_RELATIONSHIP_TEMPLATE:
+{remember: [Faction_Name] - [Organization_description_and_purpose]. RELATIONSHIP_STATUS: [Current_standing_with_PC]. REPUTATION_FACTORS: [Actions_that_influenced_standing]. BENEFITS: [Advantages_of_good_standing]. CONSEQUENCES: [Results_of_poor_relations]. IMPROVEMENT_METHODS: [Ways_to_enhance_relationship].}
+
+CHARACTER_ARC_TEMPLATE:
+{arc_tracker: [Arc_Name] - [Character_development_focus]. TYPE: Character Development. STATUS: [Beginning/Developing/Climactic/Resolving]. CATALYST: [What_started_this_arc]. GOAL: [What_character_is_working_toward]. OBSTACLES: [Internal_and_external_challenges]. PROGRESS_MARKERS: [Signs_of_advancement]. POTENTIAL_CLIMAX: [Possible_resolution_scenarios]. CONNECTIONS: [How_this_affects_other_story_elements].}
+
+MYSTERY_ARC_TEMPLATE:  
+{arc_tracker: [Mystery_Name] - [Central_question_or_puzzle]. TYPE: Investigation/Mystery. STATUS: [Beginning/Developing/Climactic/Resolving]. CATALYST: [What_revealed_the_mystery]. CLUES_DISCOVERED: [Evidence_gathered_so_far]. CLUES_REMAINING: [What_still_needs_investigation]. SUSPECTS_OR_THEORIES: [Current_possibilities]. STAKES: [Why_solving_this_matters]. POTENTIAL_REVELATIONS: [Possible_truth_scenarios].}
+
+CONFLICT_ARC_TEMPLATE:
+{arc_tracker: [Conflict_Name] - [Central_struggle_or_opposition]. TYPE: Conflict/Antagonist. STATUS: [Beginning/Developing/Climactic/Resolving]. CATALYST: [What_started_the_conflict]. OPPOSING_FORCE: [Enemy_obstacle_or_challenge]. ESCALATION_POINTS: [How_conflict_has_intensified]. STAKES: [What_happens_if_PC_wins_or_loses]. ALLIES_AND_RESOURCES: [Support_available]. POTENTIAL_RESOLUTIONS: [Ways_conflict_might_end].}
+
+RELATIONSHIP_ARC_TEMPLATE:
+{arc_tracker: [Relationship_Name] - [Connection_between_PC_and_significant_other]. TYPE: Relationship/Social. STATUS: [Beginning/Developing/Climactic/Resolving]. CATALYST: [How_relationship_started_or_changed]. CURRENT_DYNAMIC: [Nature_of_current_interaction]. TENSIONS_OR_BONDS: [What_strengthens_or_strains_relationship]. DEVELOPMENT_OPPORTUNITIES: [Scenes_or_events_that_could_advance_arc]. POTENTIAL_OUTCOMES: [Where_relationship_might_lead].}
+
+WORLD_EVENT_ARC_TEMPLATE:
+{arc_tracker: [Event_Name] - [Large_scale_happening_affecting_the_setting]. TYPE: World/Environmental. STATUS: [Beginning/Developing/Climactic/Resolving]. CATALYST: [What_triggered_this_event]. SCOPE: [Who_and_what_is_affected]. PC_INVOLVEMENT: [How_character_is_connected]. ESCALATION_TIMELINE: [How_event_is_progressing]. CONSEQUENCES: [What_happens_if_event_continues]. INTERVENTION_OPPORTUNITIES: [Ways_PC_might_influence_outcome].}
+
+## TEMPLATE_SELECTION_LOGIC
+
+SELECTION_PROCEDURE {
+    1. SCAN_USER_ACTION: Identify primary action type from user input
+    2. MATCH_TRIGGERS: Compare action against trigger word lists
+    3. SELECT_TEMPLATE: Choose most appropriate template for detected action
+    4. POPULATE_FIELDS: Fill template placeholders with relevant scene information
+    5. GENERATE_TAG: Create properly formatted {remember} tag
+    6. INTEGRATE_RESPONSE: Include tag naturally in narrative output
+}
+
+PRIORITY_ORDER: [HERB_HARVESTING â†’ NPC_INTRODUCTION â†’ LOCATION_DISCOVERY â†’ CRAFTING â†’ RECIPE â†’ ABILITY â†’ PLOT_REVELATION â†’ FACTION_RELATIONSHIP]
+
+MULTIPLE_TRIGGER_HANDLING: When multiple triggers detected, generate multiple appropriate tags
+
+CUSTOM_TEMPLATE_CREATION: For scenarios not covered by standard templates, create custom {remember} tags following the established field structure pattern
