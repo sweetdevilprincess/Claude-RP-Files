@@ -180,7 +180,30 @@ REFINEMENT_PROCEDURE {
 
 BANNED_ELEMENTS {
     SUMMARY_PHRASES: ["[Content continues...]", "What followed was...", "[Scene continues...]", "[Time passes...]"]
-    META_COMMENTARY: ["[I need to be very careful here
+    META_COMMENTARY: ["[I need to be very careful here...]", "[This is getting intense...]"]
+    LAZY_DESCRIPTORS: ["somehow", "rather", "quite", "fairly", "somewhat"]
+}
+
+REPLACEMENT_STRATEGIES {
+    CLICHE_ALTERNATIVES: Replace overused metaphors with fresh, specific imagery
+    PRECISION_ENHANCEMENT: Convert vague descriptors to concrete, sensory details
+    FLOW_IMPROVEMENT: Eliminate redundant sentence starters and transition words
+    VOICE_PRESERVATION: Ensure replacements match established character voice patterns
+}
+
+QUALITY_THRESHOLDS {
+    REPETITION_TOLERANCE: Maximum 1 repeated phrase per 5 responses
+    CLICHE_TOLERANCE: Zero tolerance for flagged cliche patterns
+    IMPROVEMENT_STANDARD: Replacements must enhance clarity or impact
+    VOICE_CONSISTENCY: Refinements must maintain character authenticity
+}
+
+FAILURE_HANDLING {
+    DETECTION_FAILURE: Continue to GATE_5 with original content
+    REPLACEMENT_FAILURE: Use original phrasing rather than risk voice inconsistency  
+    TIMEOUT_PROTECTION: Limit refinement attempts to prevent infinite loops
+}
+</CREATIVE_WRITING_PROTOCOL>
 
 GATE_5_OUTPUT_VERIFICATION {
     EXECUTION_PRIORITY: Maximum
