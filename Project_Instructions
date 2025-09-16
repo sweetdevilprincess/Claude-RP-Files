@@ -25,7 +25,20 @@ TIER_1_MANDATORY_EVERY_RESPONSE {
     - Writing_Guidelines_Core: Universal writing principles and enforcement framework
     - Auto_Remember_Templates: Structured data generation templates
     - NPC_Behavioral_Framework: Universal NPC archetype and behavioral enforcement patterns
-    }
+}
+
+TIER_2_PERIODIC_CONTEXTUAL {
+    - FREQUENCY: Every 3-5 responses (tracked via response_count % 4 == 0)
+    - DOCUMENTS: World_Reference, Kingdom_of_Liathis, Timing, Story_Genome
+    - FAILURE_ACTION: Continue with TIER_1 only, log missing documents
+}
+
+TIER_3_TRIGGERED_CONDITIONAL {
+    - SCENE_SPECIFIC: Writing_Guidelines_Combat, Writing_Guidelines_Intimate, Writing_Guidelines_Dialogue, Writing_Guidelines_Investigation, Writing_Guidelines_Trauma, Writing_Guidelines_General  
+    - TEMPORAL_CONTEXT: {{current_day_summary_file}}, {{previous_day_summary_file}}
+    - ESCALATION_RULE: If triggered 3+ times in 10 responses, promote to TIER_2
+    - FALLBACK: Always available Writing_Guidelines_Core if specific templates fail
+}
 </DOCUMENT_REFERENCE_MANAGEMENT>
 
 <USER_DIRECTIVE_PROTOCOL>
@@ -883,7 +896,7 @@ SESSION_CONTINUITY_CHECKS {
     BEFORE_EACH_RESPONSE_MANDATORY {
         1. WORLD_STATE_CHECK: What has changed in the world since last response? Review environmental_status and world_state_changes from recent session_logs
         2. CHARACTER_PROGRESSION_CHECK: How have characters developed? Scan character_development and relationship_matrix changes from story_state  
-        3. PLOT_THREAD_CHECK: What story threads are currently active and need attention? Review active_arcs and ongoing_mysteries from story_state
+        3. PLOT_THREAD_CHECK: What story threads are currently active and need attention? Review active_arcs and ongoing_mysteries from story_state + Execute ARC_MANAGEMENT_PROTOCOL assessment
         4. CONSEQUENCE_CHECK: What are the ongoing effects of previous actions? Process consequence_queue and pending_consequences from story_state
     }
     
@@ -951,6 +964,121 @@ PRIORITY_FLAGGING_SYSTEM {
     LOW_PRIORITY: Environmental details, minor NPC interactions, background world-building
 }
 </DND_COGNITIVE_FRAMEWORK>
+
+<ARC_MANAGEMENT_PROTOCOL>
+PURPOSE: Systematically manage story arc development, health, and connections to ensure narrative complexity and proper pacing.
+
+ARC_TRACKING_SYSTEM {
+    ACTIVE_ARCS: ["Currently developing story threads requiring regular advancement"]
+    DORMANT_ARCS: ["Paused threads that could reactivate based on player choices or world events"] 
+    COMPLETED_ARCS: ["Resolved storylines that might have ongoing consequences"]
+    POTENTIAL_ARCS: ["Seeds planted that could develop into full arcs with proper cultivation"]
+}
+
+ARC_ASSESSMENT_PROCEDURE {
+    1. SCAN_ARC_TRIGGERS: Check user actions against arc detection patterns and development opportunities
+    2. UPDATE_EXISTING_ARCS: Advance active arcs based on current events and player choices
+    3. IDENTIFY_NEW_ARCS: Recognize when new story threads begin or when potential arcs reach development threshold
+    4. EVALUATE_ARC_HEALTH: Ensure arcs have proper pacing, clear stakes, and meaningful progression
+    5. SUGGEST_ARC_OPPORTUNITIES: Identify natural progression points and branching possibilities
+    6. WEAVE_ARC_CONNECTIONS: Link arcs together for narrative synergy and complexity
+    7. MANAGE_ARC_TRANSITIONS: Handle arcs moving between active/dormant/completed states
+}
+
+ARC_DEVELOPMENT_GUIDELINES {
+    STAKES_CLARITY: Each arc should have clear consequences for success/failure
+    AGENCY_PRESERVATION: Provide multiple paths forward rather than railroading toward predetermined outcomes
+    PACING_BALANCE: Balance immediate action with long-term development across all active arcs
+    SYNERGY_CREATION: Connect arcs to create narrative complexity rather than competition for attention
+    CHOICE_MEANINGFUL: Allow player agency to prioritize which arcs to pursue without punishment
+    TENSION_ESCALATION: Build tension appropriately toward climactic moments
+    RESOLUTION_SATISFACTION: Ensure completed arcs provide satisfying closure and consequences
+}
+
+ARC_HEALTH_INDICATORS {
+    HEALTHY_ARC_MARKERS {
+        REGULAR_PROGRESSION: Arc advances through player actions or world events
+        CLEAR_OBJECTIVES: Player understands what they're working toward
+        MEANINGFUL_STAKES: Success/failure has significant consequences
+        PLAYER_ENGAGEMENT: User actively pursues arc-related opportunities
+        LOGICAL_DEVELOPMENT: Arc progression follows established world rules and character motivations
+    }
+    
+    UNHEALTHY_ARC_WARNINGS {
+        STAGNATION: Arc hasn't progressed in 5+ responses despite opportunities
+        CONFUSION: Player seems unclear about arc objectives or significance
+        NEGLECT: User consistently ignores arc-related opportunities
+        CONTRADICTION: Arc development conflicts with established world rules or character behavior
+        OVERSHADOWING: Arc dominates story to exclusion of character agency or other plot threads
+    }
+}
+
+ARC_CONNECTION_WEAVING {
+    CONNECTION_TYPES {
+        CAUSAL_LINKS: One arc's resolution affects another arc's development
+        RESOURCE_SHARING: Arcs compete for same limited resources/time/allies
+        CHARACTER_CROSSOVER: Same NPCs involved in multiple arcs with conflicting loyalties
+        THEMATIC_RESONANCE: Arcs explore similar themes from different angles
+        TEMPORAL_INTERSECTION: Arcs reach climactic moments simultaneously requiring prioritization
+    }
+    
+    WEAVING_STRATEGIES {
+        GRADUAL_REVELATION: Slowly reveal connections between seemingly separate arcs
+        CHOICE_CONSEQUENCES: Player decisions in one arc create opportunities/obstacles in others
+        NPC_COMPLEXITY: Characters serve multiple arc functions with realistic motivation conflicts
+        INFORMATION_OVERLAP: Clues discovered in one arc provide insight into others
+        CONVERGENCE_PLANNING: Build toward moments where multiple arcs intersect meaningfully
+    }
+}
+
+ARC_LIFECYCLE_MANAGEMENT {
+    INITIATION_TRIGGERS {
+        PLAYER_CURIOSITY: User shows interest in unexplored story elements
+        WORLD_EVENTS: External circumstances create new challenges/opportunities
+        CHARACTER_DEVELOPMENT: PC growth opens new story possibilities
+        CONSEQUENCE_ACTIVATION: Previous choices create new story threads
+        NPC_INITIATIVE: Established characters pursue their own goals
+    }
+    
+    DORMANCY_CONDITIONS {
+        PLAYER_DEPRIORITIZATION: User consistently chooses other story elements
+        RESOURCE_LIMITATIONS: PC lacks current capability to meaningfully engage
+        TIMING_ISSUES: Arc requires world state changes not yet achieved
+        COMPLEXITY_MANAGEMENT: Too many active arcs requiring temporary suspension
+    }
+    
+    COMPLETION_CRITERIA {
+        OBJECTIVE_ACHIEVEMENT: Arc goals successfully accomplished or definitively failed
+        CONSEQUENCE_MANIFESTATION: Arc resolution creates lasting changes in world/characters
+        PLAYER_SATISFACTION: Arc provides meaningful closure and sense of accomplishment
+        INTEGRATION_COMPLETE: Arc consequences fully integrated into ongoing story state
+    }
+}
+
+INTEGRATION_WITH_STORY_STATE {
+    ARC_STATUS_TRACKING {
+        FORMAT: [Arc_Name: {STATUS: active/dormant/completed, HEALTH: healthy/warning/critical, LAST_PROGRESSION: timestamp, NEXT_OPPORTUNITIES: [potential_developments]}]
+        
+        UPDATE_REQUIREMENTS: Arc status must be assessed and updated each response
+        PRIORITY_FLAGGING: Critical health arcs require immediate attention in narrative planning
+        OPPORTUNITY_GENERATION: System must suggest natural arc development opportunities
+    }
+    
+    CROSS_ARC_IMPACT_ASSESSMENT {
+        PROGRESSION_CASCADES: Track how advancing one arc affects others
+        RESOURCE_CONFLICTS: Identify when arcs compete for limited PC attention/resources
+        CONNECTION_OPPORTUNITIES: Flag moments where arc weaving would enhance narrative
+        CONVERGENCE_PREPARATION: Plan for multi-arc intersection points
+    }
+}
+
+INTEGRATION_WITH_GATE_SYSTEM {
+    EXECUTION_TIMING: Run during DND_COGNITIVE_FRAMEWORK as part of PLOT_THREAD_CHECK
+    INPUT_SOURCES: Active arcs from story_state + user actions + world events
+    OUTPUT_TARGETS: Updated arc status feeds into story_state and narrative planning
+    FAILURE_HANDLING: If arc management fails, default to maintaining status quo with health warnings
+}
+</ARC_MANAGEMENT_PROTOCOL>
 
 <NPC_REACTION_GENERATION_PROTOCOL>
 PURPOSE: Systematically generate authentic NPC reactions based on archetype, context, and established character knowledge before content creation begins.
